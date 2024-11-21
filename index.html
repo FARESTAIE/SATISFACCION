@@ -74,6 +74,19 @@
         .footer a:hover {
             text-decoration: underline;
         }
+        /* Estilos para el mensaje de confirmación */
+        #confirmation-message {
+            display: none;
+            background-color: #c1211a;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        #survey-form {
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -83,7 +96,8 @@
     <main>
         <h1>Encuesta de Satisfacción</h1>
         <p>Tu opinión nos ayuda a mejorar nuestros servicios y a avanzar en nuestras metas de sostenibilidad. ¡Gracias por colaborar!</p>
-        <form action="#" method="post">
+        
+        <form id="survey-form">
             <label for="name">Nombre completo (opcional):</label>
             <input type="text" id="name" name="name" placeholder="Escribe tu nombre">
             
@@ -116,17 +130,32 @@
                 <option value="impreso">Impreso</option>
                 <option value="ambos">Ambos</option>
             </select>
-         
 
             <label for="comments">¿Tienes algún comentario adicional?</label>
             <textarea id="comments" name="comments" rows="4" placeholder="Escribe tu opinión aquí"></textarea>
             
-            <button type="submit">Enviar Encuesta</button>
+            <button type="button" onclick="submitSurvey()">Enviar Encuesta</button>
         </form>
+
+        <div id="confirmation-message">
+            <h2>¡Gracias por tu respuesta!</h2>
+            <p>Tu opinión es muy importante para nosotros.</p>
+            <img src="logo.png" alt="Logo Fares Taie" style="max-width: 150px; height: auto;">
+        </div>
+
         <div class="footer">
             <p>En Fares Taie trabajamos para cuidar tu salud y el medio ambiente. <a href="https://farestaie.com.ar/" target="_blank"><br>
 Conoce más acá</a>.</p>
         </div>
     </main>
+
+    <script>
+        // Función para simular el envío del formulario y mostrar el mensaje de confirmación
+        function submitSurvey() {
+            // Aquí deberías agregar la lógica para manejar el envío de la encuesta (por ejemplo, enviarla al servidor)
+            document.getElementById('survey-form').style.display = 'none'; // Oculta el formulario
+            document.getElementById('confirmation-message').style.display = 'block'; // Muestra el mensaje de confirmación
+        }
+    </script>
 </body>
 </html>
