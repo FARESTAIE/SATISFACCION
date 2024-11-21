@@ -91,6 +91,7 @@
         <h1>Encuesta de Satisfacción</h1>
         <p>Tu opinión nos ayuda a mejorar nuestros servicios y a avanzar en nuestras metas de sostenibilidad. ¡Gracias por colaborar!</p>
         
+        <!-- Formulario -->
         <div id="survey-form">
             <label for="name">Nombre completo (opcional):</label>
             <input type="text" id="name" name="name" placeholder="Escribe tu nombre">
@@ -131,6 +132,7 @@
             <button type="button" onclick="submitSurvey()">Enviar Encuesta</button>
         </div>
 
+        <!-- Mensaje de agradecimiento -->
         <div class="thanks-message" id="thanks-message">
             <h2>¡Gracias por tu participación!</h2>
             <p>Tu opinión es muy importante para nosotros. ¡Seguimos trabajando para mejorar!</p>
@@ -144,11 +146,10 @@
 
     <script>
         function submitSurvey() {
-            // Ocultar el formulario y mostrar el mensaje de agradecimiento
+            // Mostrar el mensaje de agradecimiento
             document.getElementById('survey-form').style.display = 'none';
             document.getElementById('thanks-message').style.display = 'block';
         }
     </script>
 </body>
 </html>
-
