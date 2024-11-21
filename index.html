@@ -9,13 +9,13 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f8f3; /* Verde claro */
+            background-color: #f4f8f3;
             color: #333;
         }
         header {
             text-align: center;
             padding: 20px;
-            background-color: #c1211a; /* Rojo corporativo */
+            background-color: #c1211a;
             color: white;
         }
         header img {
@@ -53,7 +53,7 @@
             font-size: 1rem;
         }
         button {
-            background-color: #c1211a; /* Rojo corporativo */
+            background-color: #c1211a;
             color: white;
             border: none;
             cursor: pointer;
@@ -74,7 +74,6 @@
         .footer a:hover {
             text-decoration: underline;
         }
-        /* Estilos para el mensaje de confirmación */
         #confirmation-message {
             display: none;
             background-color: #c1211a;
@@ -144,17 +143,15 @@
         </div>
 
         <div class="footer">
-            <p>En Fares Taie trabajamos para cuidar tu salud y el medio ambiente. <a href="https://farestaie.com.ar/" target="_blank"><br>
-Conoce más acá</a>.</p>
+            <p>En Fares Taie trabajamos para cuidar tu salud y el medio ambiente. <a href="https://farestaie.com.ar/" target="_blank">Conoce más acá</a>.</p>
         </div>
     </main>
 
     <script>
-        // Función para simular el envío del formulario y mostrar el mensaje de confirmación
         function submitSurvey() {
-            // Aquí deberías agregar la lógica para manejar el envío de la encuesta (por ejemplo, enviarla al servidor)
-            document.getElementById('survey-form').style.display = 'none'; // Oculta el formulario
-            document.getElementById('confirmation-message').style.display = 'block'; // Muestra el mensaje de confirmación
+            // Mostrar mensaje de confirmación
+            document.getElementById('survey-form').style.display = 'none';
+            document.getElementById('confirmation-message').style.display = 'block';
         }
     </script>
 </body>
