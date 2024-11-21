@@ -2,116 +2,132 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="QR SATISFACCIÓN" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encuesta de Satisfacción - Fares Taie</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            background-color: #f4f8f3; /* Verde claro */
+            color: #333;
         }
-        .container {
-            background: #ffffff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            width: 90%;
+        header {
             text-align: center;
+            padding: 20px;
+            background-color: #c1211a; /* Rojo corporativo */
+            color: white;
+        }
+        header img {
+            max-width: 150px;
+            height: auto;
+        }
+        main {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
         }
         h1 {
-            color: #c1211a;
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1rem;
+            text-align: center;
         }
         label {
-            display: block;
-            margin: 10px 0 5px;
             font-weight: bold;
-            text-align: left;
+            display: block;
+            margin: 15px 0 5px;
         }
         input, textarea, select, button {
             width: 100%;
             padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 14px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
         }
         button {
-            background-color: #c1211a;
-            color: #fff;
+            background-color: #c1211a; /* Rojo corporativo */
+            color: white;
             border: none;
             cursor: pointer;
-            font-weight: bold;
+            transition: background-color 0.3s;
         }
         button:hover {
-            background-color: #a81a15;
-        }
-        img {
-            max-width: 100%;
-            max-height: 80px; /* Ajusta el tamaño máximo del logo */
-            margin-bottom: 20px;
+            background-color: #a81d16;
         }
         .footer {
             text-align: center;
-            margin-top: 10px;
-            font-size: 12px;
-            color: #666;
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+        .footer a {
+            color: #328438;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Logo -->
-        <img src="logo.png" alt="Logo Fares Taie"> <!-- Dimensiones sugeridas: 400px de ancho por 80px de alto -->
-
+    <header>
+        <img src="logo.png" alt="Logo Fares Taie">
+    </header>
+    <main>
         <h1>Encuesta de Satisfacción</h1>
-        <form action="#" method="POST">
-            <label for="name">Nombre (opcional):</label>
-            <input type="text" id="name" name="name" placeholder="Ingresa tu nombre">
+        <p>Tu opinión nos ayuda a mejorar nuestros servicios y a avanzar en nuestras metas de sostenibilidad. ¡Gracias por colaborar!</p>
+        <form action="#" method="post">
+            <label for="name">Nombre completo (opcional):</label>
+            <input type="text" id="name" name="name" placeholder="Escribe tu nombre">
+            
+            <label for="email">Correo electrónico (opcional):</label>
+            <input type="email" id="email" name="email" placeholder="Escribe tu correo">
 
-            <label for="visit">Tu visita fue a:</label>
-            <select id="visit" name="visit" required>
+            <label for="visit-type">¿Tu visita fue a:</label>
+            <select id="visit-type" name="visit-type">
                 <option value="" disabled selected>Selecciona una opción</option>
-                <option value="analisis_clinicos">Análisis Clínicos</option>
+                <option value="analisis-clinicos">Análisis Clínicos</option>
                 <option value="genomicos">Genómicos</option>
                 <option value="industria">Industria</option>
-                <option value="lifecell">Lifecell</option>
+                <option value="lifecell">LifeCell</option>
                 <option value="clonar">Clonar</option>
             </select>
 
-            <label for="experience">¿Cómo calificarías tu experiencia en Fares Taie?</label>
-            <select id="experience" name="experience" required>
+            <label for="satisfaction">¿Qué tan satisfecho/a estás con nuestro servicio?</label>
+            <input type="radio" id="very-satisfied" name="satisfaction" value="Muy satisfecho">
+            <label for="very-satisfied">Muy satisfecho/a</label><br>
+            <input type="radio" id="satisfied" name="satisfaction" value="Satisfecho">
+            <label for="satisfied">Satisfecho/a</label><br>
+            <input type="radio" id="neutral" name="satisfaction" value="Neutral">
+            <label for="neutral">Neutral</label><br>
+            <input type="radio" id="unsatisfied" name="satisfaction" value="Insatisfecho">
+            <label for="unsatisfied">Insatisfecho/a</label><br>
+
+            <label for="result-format">¿Cómo solicitaste tus resultados?</label>
+            <select id="result-format" name="result-format">
                 <option value="" disabled selected>Selecciona una opción</option>
-                <option value="excelente">Excelente</option>
-                <option value="buena">Buena</option>
-                <option value="regular">Regular</option>
-                <option value="mala">Mala</option>
+                <option value="digital">Digital</option>
+                <option value="impreso">Impreso</option>
+                <option value="ambos">Ambos</option>
             </select>
+       
 
-            <label for="comments">Comentarios o sugerencias:</label>
-            <textarea id="comments" name="comments" rows="4" placeholder="Escribe tus comentarios aquí"></textarea>
-
-            <label>¿Recomendarías Fares Taie a otras personas?</label>
-            <div>
-                <input type="radio" id="recommend_yes" name="recommend" value="sí" required>
-                <label for="recommend_yes">Sí</label>
-            </div>
-            <div>
-                <input type="radio" id="recommend_no" name="recommend" value="no">
-                <label for="recommend_no">No</label>
-            </div>
-
-            <button type="submit">Enviar Respuesta</button>
+            <label for="comments">¿Tienes algún comentario adicional?</label>
+            <textarea id="comments" name="comments" rows="4" placeholder="Escribe tu opinión acá"></textarea>
+            
+            <button type="submit">Enviar Encuesta</button>
         </form>
         <div class="footer">
-            <p>Gracias por ayudarnos a mejorar.</p>
+            <p>En Fares Taie trabajamos para cuidar tu salud y el medio ambiente.<br>
+ <a href="https://fares-taie.com/sustentabilidad" target="_blank">Conoce más acá</a>.</p>
         </div>
-    </div>
+    </main>
 </body>
 </html>
-
